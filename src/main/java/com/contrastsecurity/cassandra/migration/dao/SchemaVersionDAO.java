@@ -36,8 +36,8 @@ public class SchemaVersionDAO {
         this.tableName = tableName;
         this.cachePs = new CachePrepareStatement(session);
         //If running on a single host, don't force ConsistencyLevel.ALL
-        this.consistencyLevel =
-                session.getCluster().getMetadata().getAllHosts().size() > 1 ? ConsistencyLevel.ALL :  ConsistencyLevel.ONE;
+//        this.consistencyLevel = session.getCluster().getMetadata().getAllHosts().size() > 1 ? ConsistencyLevel.ALL :  ConsistencyLevel.ONE;
+        this.consistencyLevel = ConsistencyLevel.ONE;
     }
 
     public Keyspace getKeyspace() {
